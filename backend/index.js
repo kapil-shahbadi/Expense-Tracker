@@ -11,17 +11,23 @@ require('dotenv').config();
 require('./Models/db');
 const PORT = process.env.PORT || 8080;
 
+// Default root route
+app.get("/", (req, res) => {
+  res.send("✅ Expense Tracker Backend is running successfully!");
+});
+
 app.get('/ping', (req, res) => {
-    res.send('PONG');
+  res.send('PONG');
 });
 
 app.use(bodyParser.json());
 app.use(cors());
+
+// API routes
 app.use('/auth', AuthRouter);
 app.use('/products', ProductRouter);
-app.use('/expenses', ensureAuthenticated, ExpenseRouter)
-
+app.use('/expenses', ensureAuthenticated, ExpenseRouter);
 
 app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`)
-})
+  console.log(`Server is running on ${PORT}`);
+});
