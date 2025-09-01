@@ -12,5 +12,6 @@ export const handleError = (msg) => {
     });
 };
 
-// Vite me env variable import.meta.env se aata hai
-export const APIUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
+// Yaha Vercel ka URL daal diya, agar env var na mile to ye chalega
+export const APIUrl =
+    import.meta.env.VITE_API_URL || "https://expense-tracker-api-tau-six.vercel.app";
