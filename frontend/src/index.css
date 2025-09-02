@@ -18,6 +18,7 @@ body{
 }
 
 body{
+  background-color: #f5f5f5; 
   display: flex;
   justify-content: center;
   /* align-items: center; */
@@ -60,16 +61,19 @@ body{
   font-size: 12px;
   font-style: italic;
 }
-
-button{
-  background-color: purple;
+button {
+   padding: 8px 18px;
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
   border: none;
-  font-size: 15px;
-  color: white;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 6px;  /* halka round */
+  color: #fff;
+   /* background: #e74c3c; */
+    background: red; 
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
-  margin: 10px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(30, 60, 114, 0.3);
 }
 
 .user-section{
@@ -83,10 +87,22 @@ button{
 }
 
 .expense-item {
-  display: flex;
+   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 6px 10px;
+  margin: 6px 0;
   border-bottom: 1px solid #ccc;
+  background: transparent; 
+}
+button:hover {
+  background: linear-gradient(90deg, #2a5298, #1e3c72);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(30, 60, 114, 0.5);
+}
+button:active {
+  transform: scale(0.96);
+  box-shadow: 0 2px 5px rgba(30, 60, 114, 0.4);
 }
 
 .expense-description {
@@ -104,7 +120,8 @@ button{
 }
 
 .delete-button:hover {
-  background-color: #c0392b;
+  background-color: pink;
+  /* #c039 */
 }
 
 .amounts-container {
@@ -122,6 +139,9 @@ button{
 }
 
 .expense-amount{
-  color: #c0392b;
+  /* color: #c0392b;
+  font-weight: bold; */
+   font-size: 14px;
   font-weight: bold;
+  color: #e74c3c;  
 }
